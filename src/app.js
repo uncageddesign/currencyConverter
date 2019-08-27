@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
       currency: "",
       newCurrency: "",
       convertedCurrency: "",
-      currencyAmount: 0
+      euros: 0,
+      currencyAmount: 0,
     },
     methods: {
       fetchCurrencyRates: function(){
@@ -20,12 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       },
 
-      fromEuros(){
-        return this.currencyAmount * this.rates[this.newCurrency];
+      fromEuros: function (){
+        const convertedCurrency = this.euros * this.rates;
+        return convertedCurrency;
       },
 
-      toEuros(){
-        return this.currencyAmount/this.rates[this.newCurrency];
+      toEuros: function () {
+        return this.currencyAmount/this.rates;
       }
 
     },

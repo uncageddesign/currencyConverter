@@ -23,15 +23,15 @@
 
         <section>
           <h2>Convert From Euros</h2>
-          <label v-model="fromEuros">Amount: </label>
-          <input type="number">
-          <p>Converted Amount:  {{ currencyAmount }} </p>
+            <label>Amount: </label>
+            <input type="number" v-model="euros">
+            <p>Converted Amount:  {{ convertedCurrency }} </p>
         </section>
 
         <section>
           <h2>Convert To Euros</h2>
-          <label v-model="toEuros">Currency Amount: </label>
-          <input type="number">
+          <label>Amount: </label>
+          <input type="number" v-model="currencyAmount">
           <p>Converted Amount: {{ currencyAmount }} </p>
         </section>
       </div>
