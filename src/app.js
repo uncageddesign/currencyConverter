@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#app',
     data: {
       rates: {},
-      currency: "",
       newCurrency: "",
       convertedCurrency: "",
       euros: 0,
+      notEuros: 0,
       currencyAmount: 0,
     },
     methods: {
@@ -22,12 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
       },
 
       fromEuros: function (){
-        const convertedCurrency = this.euros * this.rates;
-        return convertedCurrency;
+        this.convertedCurrency = this.euros * this.rates[0];
+        return this.convertedCurrency;
       },
 
       toEuros: function () {
-        return this.currencyAmount/this.rates;
+        this.notEuros = this.currencyAmount / this.rates;
+        return this.notEuros;
       }
 
     },
