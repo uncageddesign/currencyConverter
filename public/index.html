@@ -13,7 +13,27 @@
 
       <div class="converter">
 
-        
+        <section>
+          <label>Select Currency:</label>
+          <select v-model="newCurrency">
+          <option disabled value="">Select Currency</option>
+          <option v-for="(value, index) in rates" :value="index">{{ index }}</option>
+          </select>
+        </section>
+
+        <section>
+          <h2>Convert From Euros</h2>
+          <label v-model="fromEuros">Amount: </label>
+          <input type="number">
+          <p>Converted Amount:  {{ currencyAmount }} </p>
+        </section>
+
+        <section>
+          <h2>Convert To Euros</h2>
+          <label v-model="toEuros">Currency Amount: </label>
+          <input type="number">
+          <p>Converted Amount: {{ currencyAmount }} </p>
+        </section>
       </div>
     </div>
 

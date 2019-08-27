@@ -1,0 +1,14 @@
+body {
+  background-color: lightgrey;
+  font-family: sans-serif;
+}
+
+#app {
+  margin: auto;
+  padding: 20px;
+}
+
+.converter {
+  background-color: white;
+  padding: 10px;
+}
