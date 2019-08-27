@@ -17,7 +17,7 @@
           <label>Select Currency:</label>
           <select v-model="newCurrency">
           <option disabled value="">Select Currency</option>
-          <option v-for="(value, index) in rates" :value="index">{{ index }}</option>
+          <option v-for="(value, rate) in rates" :value="rate">{{ rate }}</option>
           </select>
         </section>
 
@@ -26,15 +26,15 @@
             <label>Amount: </label>
             <input type="number" v-model="euros">
             <button @click="fromEuros">Convert</button>
-            <p>Converted Amount:  {{ convertedCurrency }} </p>
+            <p>Converted Amount: {{ convertedCurrency }} </p>
         </section>
 
         <section>
           <h2>Convert To Euros</h2>
           <label>Amount: </label>
-          <input type="number" v-model="currencyAmount">
+          <input type="number" v-model="notEuros">
           <button @click="toEuros">Convert</button>
-          <p>Converted Amount: {{ newCurrency }} </p>
+          <p>Converted Amount: {{ currencyAmount }} </p>
         </section>
       </div>
     </div>

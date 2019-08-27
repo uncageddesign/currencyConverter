@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#app',
     data: {
       rates: {},
-      newCurrency: "",
-      convertedCurrency: "",
-      euros: 0,
-      notEuros: 0,
-      currencyAmount: 0,
+      newCurrency: "",  //for drop down
+      euros: 0, //starting amount euros
+      convertedCurrency: 0, //output of from euros
+      notEuros: 0,  //starting amount random currency
+      currencyAmount: 0,  //output of to euros
     },
     methods: {
       fetchCurrencyRates: function(){
@@ -22,13 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
       },
 
       fromEuros: function (){
-        this.convertedCurrency = this.euros * this.rates[0];
+        this.convertedCurrency = (this.euros * this.rates[this.newCurrency]).toFixed(2);
         return this.convertedCurrency;
       },
 
       toEuros: function () {
-        this.notEuros = this.currencyAmount / this.rates;
-        return this.notEuros;
+        this.currencyAmount = (this.notEuros / this.rates[this.newCurrency]).toFixed(2);
+        return this.currencyAmount;
       }
 
     },
